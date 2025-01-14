@@ -1,5 +1,18 @@
 terraform {
+  required_version = "1.10.3"
 
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "3.0.0"
+    }
+
+  }
+
+  backend "s3" {
+    bucket = "terraform-state-1234567890"
+
+  }
 }
 
 provider "aws" {
